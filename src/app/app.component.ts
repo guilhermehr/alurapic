@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PhotoService } from './photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +7,4 @@ import { PhotoService } from './photos/photo/photo.service';
 })
 export class AppComponent {
 
-  photos: any[] = [];
-
-  constructor(private photoService: PhotoService) {
-
-  }
-  
-  ngOnInit(): void {
-    this.photoService
-      .listFromUser('flavio')
-      .subscribe(photos => this.photos = photos);    
-  }
 }
