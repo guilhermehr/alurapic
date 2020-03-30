@@ -8,12 +8,15 @@ import { PhotoService } from './photos/photo/photo.service';
 })
 export class AppComponent {
 
-  photos: Object[] = [];
+  photos: any[] = [];
 
-  constructor(photoService: PhotoService) {
+  constructor(private photoService: PhotoService) {
 
-    photoService
+  }
+  
+  ngOnInit(): void {
+    this.photoService
       .listFromUser('flavio')
-      .subscribe(photos => this.photos = photos);
+      .subscribe(photos => this.photos = photos);    
   }
 }
